@@ -4,14 +4,14 @@ namespace TestGeometryWinForm.Views
 {
     public class EdgeView : ViewItem
     {
-        public Edge Edge { get; set; }
+        public EdgeInterface Edge { get; set; }
 
-        public EdgeView (Edge edge)
+        public EdgeView (EdgeInterface edge)
         {
             this.Edge = edge;
         }
 
-        public EdgeView(Edge edge, System.Drawing.Color color)
+        public EdgeView(EdgeInterface edge, System.Drawing.Color color)
         {
             this.Edge = edge;
             this.PenColor = color;

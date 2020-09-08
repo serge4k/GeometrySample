@@ -49,7 +49,9 @@
     <Compile Include="Models\Geometry\PointInPolygonRelativePosition.cs" />
     <Compile Include="Models\Geometry\PointInterface.cs" />
     <Compile Include="Models\Geometry\Polygon.cs" />
+    <Compile Include="Models\Geometry\PolygonAccessInterface.cs" />
     <Compile Include="Models\Geometry\PolygonInterface.cs" />
+    <Compile Include="Models\Geometry\PolygonOperationInterface.cs" />
     <Compile Include="Models\Geometry\RelativeEdgePosition.cs" />
     <Compile Include="Models\Geometry\RelativePointPosition.cs" />
     <Compile Include="Models\Geometry\Rotation.cs" />

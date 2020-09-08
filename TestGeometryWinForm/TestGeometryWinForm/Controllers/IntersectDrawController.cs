@@ -6,14 +6,14 @@ namespace TestGeometryWinForm.Controllers
 {
     public class IntersectDrawController : SceneDrawController
     {
-        private Edge edge0;
-        private Edge edge1;
+        private EdgeInterface edge0;
+        private EdgeInterface edge1;
 
         public IntersectDrawController(ViewInterface view) : base(view)
         {
         }
 
-        public void IntersectTest()
+        public override void Test()
         {
             this.scene = new List<ViewItemInterface>();
             edge0 = new Edge(10, 10, 100, 50);

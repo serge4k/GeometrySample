@@ -112,8 +112,8 @@ namespace GeometryLib.Models.Geometry
 
         public static RelativePointPosition Classify(Point p2, Point p0, Point p1)
         {
-            Point a = p1 - p0;
-            Point b = p2 - p0;
+            Point a = (Point)p1 - (Point)p0;
+            Point b = (Point)p2 - (Point)p0;
             double sa = a.X * b.Y - b.X * a.Y;
             if (sa > .0)
             {
@@ -171,8 +171,7 @@ namespace GeometryLib.Models.Geometry
             Point n = new Point(ab.Dest - ab.Org); // n - vector perpedicular to the Edge e
             n = (1.0 / n.Length()) * n; // normalize vector n
             Edge f = new Edge(this, this + n); // The f edge is positioned on current point
-            double t;
-            f.Intersect(e, out t); // t = signed distance across vector f to point
+            f.Intersect(e, out double t); // t = signed distance across vector f to point
             return t;
         }
     }

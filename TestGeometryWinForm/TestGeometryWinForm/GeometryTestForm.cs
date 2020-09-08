@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestGeometryWinForm.Controllers;
 using TestGeometryWinForm.Views;
@@ -16,11 +9,11 @@ namespace TestGeometryWinForm
     {
         private DrawingBox drawingBox;
 
-        private IntersectDrawController intesectDrawController;
+        private ControllerInterface intesectDrawController;
 
-        private PointInPolygonController pointInPolygonController;
+        private ControllerInterface pointInPolygonController;
 
-        private PointRelationPosController pointRelationPosController;
+        private ControllerInterface pointRelationPosController;
 
         public GeometryTestForm()
         {
@@ -36,13 +29,13 @@ namespace TestGeometryWinForm
             this.Controls.Add(drawingBox);
 
             intesectDrawController = new IntersectDrawController(drawingBox);
-            intesectDrawController.IntersectTest();
+            intesectDrawController.Test();
 
             pointInPolygonController = new PointInPolygonController(drawingBox);
-            pointInPolygonController.PointInPolygonTest();
+            pointInPolygonController.Test();
 
             pointRelationPosController = new PointRelationPosController(drawingBox);
-            pointRelationPosController.PointRelationPosTest();
+            pointRelationPosController.Test();
         }
 
         private void DrawingBox_Paint(object sender, PaintEventArgs e)

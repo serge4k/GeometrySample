@@ -46,7 +46,7 @@ namespace GeometryLib.Models.Geometry
             return new Point(this.Org + t * (this.Dest - this.Org));
         }
 
-        public RelativeEdgePosition Intersect(Edge e, out double t)
+        public RelativeEdgePosition Intersect(EdgeInterface e, out double t)
         {
             Point a = this.Org;
             Point b = this.Dest;
@@ -56,7 +56,7 @@ namespace GeometryLib.Models.Geometry
             double denom = DotProduct(n, b - a);
             if (denom == 0.0)
             {
-                RelativePointPosition aClass = Geometry.Point.Classify(this.Org, e);
+                RelativePointPosition aClass = Geometry.Point.Classify(this.Org, (Edge)e);
                 if ((aClass == RelativePointPosition.LEFT) || (aClass == RelativePointPosition.RIGHT))
                 {
                     t = 0.0;
@@ -74,7 +74,7 @@ namespace GeometryLib.Models.Geometry
             return RelativeEdgePosition.SKEW;
         }
 
-        public RelativeEdgePosition Cross(Edge e, out double t)
+        public RelativeEdgePosition Cross(EdgeInterface e, out double t)
         {
             double s = 0.0;
             RelativeEdgePosition crossType = e.Intersect(this, out s);

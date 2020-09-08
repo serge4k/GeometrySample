@@ -11,7 +11,7 @@ namespace TestGeometryWinForm.Controllers
         {
         }
 
-        public void PointRelationPosTest()
+        public override void Test()
         {
             edge = new Edge(50, 175, 100, 100);
 

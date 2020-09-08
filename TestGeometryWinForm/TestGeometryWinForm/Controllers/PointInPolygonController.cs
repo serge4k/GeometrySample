@@ -11,7 +11,7 @@ namespace TestGeometryWinForm.Controllers
         {
         }
 
-        public void PointInPolygonTest()
+        public override void Test()
         {
             //polygon = new Polygon();
             //polygon.Insert(50, 175);
@@ -43,7 +43,7 @@ namespace TestGeometryWinForm.Controllers
             Utils.FillViewDots(
                 this.View,
                 this.scene,
-                (point) => Polygon.PointInPolygon2(point, polygon)
+                (point) => Polygon.PointInPolygon2((Point)point, polygon)
                 );
             
             this.scene.Add(new PolygonView(polygon));

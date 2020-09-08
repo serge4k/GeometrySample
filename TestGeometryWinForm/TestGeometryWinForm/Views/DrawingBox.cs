@@ -29,7 +29,7 @@ namespace TestGeometryWinForm.Views
 
         public void Circle(double x, double y, double r)
         {
-            graphics.FillEllipse(this.brush, (float)(x - r/2), (float)(y - r/2), (float)(r / 2), (float)(r / 2));
+            graphics.FillEllipse(this.brush, (float)(x - r/2 + 1), (float)(y - r/2 + 1), (float)(r / 2), (float)(r / 2));
         }
 
         public void Line(double x0, double y0, double x1, double y1)

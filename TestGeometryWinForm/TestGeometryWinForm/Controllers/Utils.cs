@@ -7,12 +7,12 @@ namespace TestGeometryWinForm.Controllers
 {
     public class Utils
     {
-        public static void FillViewDots(Views.ViewInterface view, List<ViewItemInterface> scene, Func<Point, PointInPolygonRelativePosition> func, int offset = 0)
+        public static void FillViewDots(Views.ViewInterface view, List<ViewItemInterface> scene, Func<PointInterface, PointInPolygonRelativePosition> func, int offset = 0)
         {
             FillViewDots(view, scene, func, System.Drawing.Color.Green, offset);
         }
 
-        public static void FillViewDots(Views.ViewInterface view, List<ViewItemInterface> scene, Func<Point, PointInPolygonRelativePosition> func, System.Drawing.Color color, int offset = 0)
+        public static void FillViewDots(Views.ViewInterface view, List<ViewItemInterface> scene, Func<PointInterface, PointInPolygonRelativePosition> func, System.Drawing.Color color, int offset = 0)
         {
             for (double y = 0; y < view.Height; y += 5)
             {
@@ -24,7 +24,6 @@ namespace TestGeometryWinForm.Controllers
                     if (inside)
                     {
                         scene.Add(new PointView(point, color));
-                        ///scene1.Add(new PointView(point, inside ? System.Drawing.Color.Green : System.Drawing.Color.Red));
                     }
                 }
             }

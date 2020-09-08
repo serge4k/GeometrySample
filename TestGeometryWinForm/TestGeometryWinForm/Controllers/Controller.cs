@@ -7,7 +7,7 @@ using TestGeometryWinForm.Views;
 
 namespace TestGeometryWinForm.Controllers
 {
-    public abstract class Controller
+    public abstract class Controller : ControllerInterface
     {
         public ViewInterface View { get; set; }
 
@@ -15,6 +15,8 @@ namespace TestGeometryWinForm.Controllers
         {
             this.View = view;
         }
+
+        public abstract void Test();
 
         public abstract void Draw();
     }

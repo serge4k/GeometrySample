@@ -1,6 +1,6 @@
 ﻿namespace GeometryLib.Models.Geometry
 {
-    interface EdgeInterface
+    public interface EdgeInterface
     {
         Point Org { get; set; }
 
@@ -12,9 +12,9 @@
 
         Point Point(double t);
 
-        RelativeEdgePosition Intersect(Edge e, out double t);
+        RelativeEdgePosition Intersect(EdgeInterface e, out double t);
 
-        RelativeEdgePosition Cross(Edge e, out double t);
+        RelativeEdgePosition Cross(EdgeInterface e, out double t);
 
         bool IsVertical();
 

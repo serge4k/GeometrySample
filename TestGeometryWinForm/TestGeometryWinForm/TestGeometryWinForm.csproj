@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\ControllerInterface.cs" />
     <Compile Include="Controllers\IntersectDrawController.cs" />
     <Compile Include="Controllers\PointInPolygonController.cs" />
     <Compile Include="Controllers\PointRelationPosController.cs" />
