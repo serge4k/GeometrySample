@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 
 namespace TestGeometryWinForm.Views
 {
@@ -20,6 +17,8 @@ namespace TestGeometryWinForm.Views
         void Line(double x0, double y0, double x1, double y1);
 
         void Circle(double x, double y, double r);
+
+        void Path(GraphicsPath path);
 
         void Scene(List<ViewItemInterface> scene);
     }

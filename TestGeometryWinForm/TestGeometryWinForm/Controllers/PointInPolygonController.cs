@@ -13,14 +13,14 @@ namespace TestGeometryWinForm.Controllers
 
         public override void Test()
         {
-            //polygon = new Polygon();
-            //polygon.Insert(50, 175);
-            //polygon.Insert(75, 225);
-            //polygon.Insert(100, 200);
-            //polygon.Insert(125, 225);
-            //polygon.Insert(175, 150);
-            //polygon.Insert(125, 150);
-            //polygon.Insert(100, 100);
+            ////polygon = new Polygon();
+            ////polygon.Insert(50, 175);
+            ////polygon.Insert(75, 225);
+            ////polygon.Insert(100, 200);
+            ////polygon.Insert(125, 225);
+            ////polygon.Insert(175, 150);
+            ////polygon.Insert(125, 150);
+            ////polygon.Insert(100, 100);
 
             Point[] points = {
                 new Point(100,100),
@@ -34,8 +34,6 @@ namespace TestGeometryWinForm.Controllers
 
             polygon = Polygon.StartPolygon(points);
 
-            var p2 = Polygon.InsertionHull(points);
-
             var p0 = new Point(100, 130);
             var t0 = Polygon.PointInPolygon2(p0, polygon);
             var c0 = t0 == PointInPolygonRelativePosition.INSIDE ? System.Drawing.Color.Maroon : System.Drawing.Color.White;
@@ -43,12 +41,11 @@ namespace TestGeometryWinForm.Controllers
             Utils.FillViewDots(
                 this.View,
                 this.scene,
-                (point) => Polygon.PointInPolygon2((Point)point, polygon)
+                (point) => Polygon.PointInPolygon2((Point)point, polygon),
+                System.Drawing.Color.Green
                 );
             
-            this.scene.Add(new PolygonView(polygon));
-
-            this.scene.Add(new PolygonView(p2, System.Drawing.Color.BlueViolet));
+            this.scene.Add(new PolygonView(polygon, System.Drawing.Color.LightGreen));
             
             this.scene.Add(new PointView(p0, c0));
         }

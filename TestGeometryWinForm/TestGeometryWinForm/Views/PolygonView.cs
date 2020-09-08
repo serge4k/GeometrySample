@@ -1,4 +1,6 @@
 ﻿using GeometryLib.Models.Geometry;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace TestGeometryWinForm.Views
 {
@@ -19,11 +21,20 @@ namespace TestGeometryWinForm.Views
 
         public override void Draw(ViewInterface view)
         {
+            var points = new PointF[this.Polygon.Size()];
+
             for (int i = 0; i < this.Polygon.Size(); i++, this.Polygon.Advance(Rotation.CLOCKWISE))
             {
-                var viewEdge = new EdgeView(this.Polygon.Edge(), this.PenColor);
-                viewEdge.Draw(view);
+                points[i] = new PointF((float)this.Polygon.Point().X, (float)view.Height - (float)this.Polygon.Point().Y);
             }
+
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure(); // Start the first figure.
+            path.AddLines(points);
+            path.CloseFigure(); // Second figure is closed.
+
+            view.SetPenColor(this.PenColor);
+            view.Path(path);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,11 @@ namespace TestGeometryWinForm.Views
         public void Line(double x0, double y0, double x1, double y1)
         {
             graphics.DrawLine(this.pen, (float)x0, (float)y0, (float)x1, (float)y1);
+        }
+
+        public void Path(GraphicsPath path)
+        {
+            graphics.DrawPath(this.pen, path);
         }
 
         public void Scene(List<ViewItemInterface> scene)

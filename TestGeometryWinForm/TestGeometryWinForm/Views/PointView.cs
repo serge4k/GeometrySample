@@ -1,4 +1,5 @@
 ﻿using GeometryLib.Models.Geometry;
+using System.Drawing.Drawing2D;
 
 namespace TestGeometryWinForm.Views
 {
@@ -20,8 +21,13 @@ namespace TestGeometryWinForm.Views
 
         public override void Draw(ViewInterface view)
         {
-            view.SetBrushColor(this.BrushColor);
-            view.Circle(Point.X, view.Height - 1 - Point.Y, 5);
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure(); // Start the first figure.
+            path.AddEllipse((float)(Point.X) - 1, (float)view.Height - (float)Point.Y - 1, 2, 2);
+            path.CloseFigure(); // Second figure is closed.
+
+            view.SetPenColor(this.BrushColor);
+            view.Path(path);
         }
     }
 }
